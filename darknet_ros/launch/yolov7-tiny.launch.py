@@ -14,11 +14,9 @@ def generate_launch_description():
   )
 
   camera = Node(
-    package="v4l2_camera",
-    executable="v4l2_camera_node",
-    parameters=[
-      {'video_device'     : "/dev/video0"},
-    ])
+    package="monicar_cv",
+    executable="csi_pub",
+    )
 
   return LaunchDescription([
     darknet_ros_launch,
