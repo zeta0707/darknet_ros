@@ -19,6 +19,9 @@ set(DOWNLOAD_YOLOV4_TINY ON)
 set(DOWNLOAD_YOLOV4_MISH OFF)
 set(DOWNLOAD_YOLOV7_TINY ON)
 
+set(DOWNLOAD_YOLOV4_JESSICAR ON)
+set(DOWNLOAD_YOLOV7_JESSIARM ON)
+
 # Jetson AGX Xavier & TITAN V is under version of Turing. So, please set manually.
 # Turing or Ampere GPUs, FP16 is automatically enabled.
 
@@ -383,6 +386,27 @@ if(DOWNLOAD_YOLOV7_TINY)
   endif()
   message(STATUS "Done.")
 endif()
+
+if(DOWNLOAD_YOLOV4_JESSICAR)
+  set(FILE "${PATH}/yolov4-tiny-gostop.weights")
+  message(STATUS "Checking and downloading yolov4-tiny-gostop.weights if needed ...")
+  if (NOT EXISTS "${FILE}")
+    message(STATUS "... file does not exist. Downloading now ...")
+    execute_process(COMMAND wget -q https://github.com/zeta0707/darknet_ros_custom/raw/main/yolo_network_config/weights/yolov4-tiny-gostop.weights -P ${PATH})
+  endif()
+  message(STATUS "Done.")
+endif()
+
+if(DOWNLOAD_YOLOV4_JESSIARM)
+  set(FILE "${PATH}/yolov4-tiny-jessiarm.weights")
+  message(STATUS "Checking and downloading yolov4-tiny-jessiarm.weights if needed ...")
+  if (NOT EXISTS "${FILE}")
+    message(STATUS "... file does not exist. Downloading now ...")
+    execute_process(COMMAND wget -q https://github.com/zeta0707/darknet_ros_custom/raw/main/yolo_network_config/weights/yolov4-tiny-jessiarm.weights -P ${PATH})
+  endif()
+  message(STATUS "Done.")
+endif()
+
 
 install(DIRECTORY yolo_network_config/cfg yolo_network_config/weights DESTINATION share/${PROJECT_NAME}/yolo_network_config/)
 install(DIRECTORY launch config DESTINATION share/${PROJECT_NAME}/)
