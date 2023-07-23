@@ -20,7 +20,7 @@ set(DOWNLOAD_YOLOV4_MISH OFF)
 set(DOWNLOAD_YOLOV7_TINY ON)
 
 set(DOWNLOAD_YOLOV4_JESSICAR ON)
-set(DOWNLOAD_YOLOV7_JESSIARM ON)
+set(DOWNLOAD_YOLOV4_JESSIARM ON)
 
 # Jetson AGX Xavier & TITAN V is under version of Turing. So, please set manually.
 # Turing or Ampere GPUs, FP16 is automatically enabled.
