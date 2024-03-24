@@ -1,0 +1,14 @@
+darknet_ros:
+  ros__parameters:
+    yolo_model:
+      config_file:
+        name: yolov4-tiny-moniarm.cfg
+      weight_file:
+        name: yolov4-tiny-moniarm.weights
+      threshold:
+        value: 0.8
+      detection_classes:
+        names:
+        - RedCube
+        - RedStar
+        - BlueCylinder
