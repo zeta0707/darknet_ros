@@ -6,9 +6,8 @@ darknet_ros:
       weight_file:
         name: yolov4-tiny-moniarm.weights
       threshold:
-        value: 0.8
+        value: 0.9
       detection_classes:
         names:
-        - RedCube
-        - RedStar
-        - BlueCylinder
+        - pepsi
+        - car
