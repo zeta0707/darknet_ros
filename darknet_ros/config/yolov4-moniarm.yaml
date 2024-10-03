@@ -9,5 +9,6 @@ darknet_ros:
         value: 0.9
       detection_classes:
         names:
-        - pepsi
-        - car
+        - watermelon
+        - grape
+        - pineapple
